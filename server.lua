@@ -21,21 +21,21 @@ end)
 if Config.UseESX then
 	ESX.RegisterUsableItem(Config.CoughDrug, function(source)
 		local xPlayer = ESX.GetPlayerFromId(source)
-		if xPlayer.removeInventoryItem(Config.CoughDrug, 1) then
+		 xPlayer.removeInventoryItem(Config.CoughDrug, 1) 
             TriggerEvent('angelicxs-MedicalDiseases:CureDisease',source, 'coughing')
-        end
+        
 	end)
     ESX.RegisterUsableItem(Config.VomitDrug, function(source)
 		local xPlayer = ESX.GetPlayerFromId(source)
-		if xPlayer.removeInventoryItem(Config.VomitDrug, 1) then
+		 xPlayer.removeInventoryItem(Config.VomitDrug, 1) 
             TriggerEvent('angelicxs-MedicalDiseases:CureDisease',source, 'vomiting')
-        end
+        
 	end)
     ESX.RegisterUsableItem(Config.DizzyDrug, function(source)
 		local xPlayer = ESX.GetPlayerFromId(source)
-		if xPlayer.removeInventoryItem(Config.DizzyDrug, 1) then
+		xPlayer.removeInventoryItem(Config.DizzyDrug, 1)
             TriggerEvent('angelicxs-MedicalDiseases:CureDisease',source, 'dizzy')
-        end
+        
 	end)
 elseif Config.UseQBCore then
     QBCore.Functions.CreateUseableItem(Config.CoughDrug, function(source, item)
