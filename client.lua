@@ -120,7 +120,7 @@ end
 
 function Coughing()
     sickType = 'coughing'
-    while isSick do
+    while isSick and sickType == 'coughing' do
         local sleep = math.random(5, 30)
         local ped = PlayerPedId()
         local dict = 'timetable@gardener@smoking_joint'
@@ -137,7 +137,7 @@ end
 
 function Vomiting()
     sickType = 'vomiting'
-    while isSick do
+    while isSick and sickType == 'vomiting' do
         local sleep = math.random(30, 90)
         local ped = PlayerPedId()
         local health = GetEntityHealth(ped)
@@ -159,7 +159,7 @@ end
 
 function Dizzy()
     sickType = 'dizzy'
-    while isSick do
+    while isSick and sickType == 'dizzy' do
         local sleep = math.random(60, 120)
         local ped = PlayerPedId()
         AnimpostfxPlay('MP_Celeb_Lose', 15000, true)
