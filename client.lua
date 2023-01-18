@@ -59,12 +59,16 @@ end)
 
 RegisterNetEvent('angelicxs-MedicalDiseases:CureIllness', function(type, usage)
     if type == 'allowed' then
-        if usage == sickType or usage == 'all' then
-            ResetSickness()
-            TriggerEvent('angelicxs-MedicalDiseases:Notify', Config.Lang['cured'], Config.LangType['success'])
-        else
-            TriggerEvent('angelicxs-MedicalDiseases:Notify', Config.Lang['wrong_medicine'], Config.LangType['error'])
-        end
+	if isSick then
+		if usage == sickType or usage == 'all' then
+		    ResetSickness()
+		    TriggerEvent('angelicxs-MedicalDiseases:Notify', Config.Lang['cured'], Config.LangType['success'])
+		else
+		    TriggerEvent('angelicxs-MedicalDiseases:Notify', Config.Lang['wrong_medicine'], Config.LangType['error'])
+		end
+	else
+        	TriggerEvent('angelicxs-MedicalDiseases:Notify', Config.Lang['not_sick'], Config.LangType['error'])
+	end
     end
 end)
 
@@ -180,8 +184,6 @@ function ResetSickness()
         Wait(2700)
         RemoveAnimDict(dict)
         ClearPedTasks(ped)
-    else
-        TriggerEvent('angelicxs-MedicalDiseases:Notify', Config.Lang['not_sick'], Config.LangType['error'])
     end
 end
 
