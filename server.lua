@@ -8,7 +8,7 @@ elseif Config.UseQBCore then
     QBCore = exports['qb-core']:GetCoreObject()
 end
 
-RegisterNetEvent('angelicxs-MedicalDiseases:CommandHeal', function(source, player)
+RegisterNetEvent('angelicxs-MedicalDiseases:CommandHeal', function(player)
     if player then
         TriggerEvent('angelicxs-MedicalDiseases:CureDisease', player, 'all')
     end
