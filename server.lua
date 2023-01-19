@@ -47,13 +47,13 @@ elseif Config.UseQBCore then
     QBCore.Functions.CreateUseableItem(Config.VomitDrug, function(source, item)
         local Player = QBCore.Functions.GetPlayer(source)
         if Player.Functions.RemoveItem(Config.VomitDrug, 1,item.slot) then
-            TriggerEvent('angelicxs-MedicalDiseases:CureDisease',source, 'coughing')
+            TriggerEvent('angelicxs-MedicalDiseases:CureDisease',source, 'vomiting')
         end
     end)
     QBCore.Functions.CreateUseableItem(Config.DizzyDrug, function(source, item)
         local Player = QBCore.Functions.GetPlayer(source)
         if Player.Functions.RemoveItem(Config.DizzyDrug, 1,item.slot) then
-            TriggerEvent('angelicxs-MedicalDiseases:CureDisease',source, 'coughing')
+            TriggerEvent('angelicxs-MedicalDiseases:CureDisease',source, 'dizzy')
         end
     end) 
 end
