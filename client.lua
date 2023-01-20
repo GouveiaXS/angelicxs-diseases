@@ -59,16 +59,16 @@ end)
 
 RegisterNetEvent('angelicxs-MedicalDiseases:CureIllness', function(type, usage)
     if type == 'allowed' then
-	if isSick then
-		if usage == sickType or usage == 'all' then
-		    ResetSickness()
-		    TriggerEvent('angelicxs-MedicalDiseases:Notify', Config.Lang['cured'], Config.LangType['success'])
-		else
-		    TriggerEvent('angelicxs-MedicalDiseases:Notify', Config.Lang['wrong_medicine'], Config.LangType['error'])
-		end
-	else
-        	TriggerEvent('angelicxs-MedicalDiseases:Notify', Config.Lang['not_sick'], Config.LangType['error'])
-	end
+        if isSick then
+            if usage == sickType or usage == 'all' then
+                ResetSickness()
+                TriggerEvent('angelicxs-MedicalDiseases:Notify', Config.Lang['cured'], Config.LangType['success'])
+            else
+                TriggerEvent('angelicxs-MedicalDiseases:Notify', Config.Lang['wrong_medicine'], Config.LangType['error'])
+            end
+        else
+            TriggerEvent('angelicxs-MedicalDiseases:Notify', Config.Lang['not_sick'], Config.LangType['error'])
+        end
     end
 end)
 
@@ -165,7 +165,7 @@ function Dizzy()
         AnimpostfxPlay('MP_Celeb_Lose', 15000, true)
         SetPedMovementClipset(ped, 'MOVE_M@DRUNK@MODERATEDRUNK', 0.5)
         Wait(15000)
-        ResetPedMovementClipset(ped, 'MOVE_M@DRUNK@MODERATEDRUNK', 2)
+        ResetPedMovementClipset(ped, 2)
         AnimpostfxStop('MP_Celeb_Lose')
         ClearPedTasks(ped)
         Wait(sleep*1000)
@@ -183,6 +183,10 @@ function ResetSickness()
         TaskPlayAnim(ped, dict, anim, 8.0, 8.0, -1, 50, 0, false, false, false)
         Wait(2700)
         RemoveAnimDict(dict)
+        ResetPedMovementClipset(ped, 2)
+        AnimpostfxStop('SwitchHUDIn')
+        AnimpostfxStop('SwitchHUDOut')
+        AnimpostfxStop('MP_Celeb_Lose')
         ClearPedTasks(ped)
     end
 end
@@ -196,9 +200,11 @@ AddEventHandler('onResourceStop', function(resource)
     if GetCurrentResourceName() == resource then
         isSick = false
         sickType = nil
+        local ped = PlayerPedId()
+        ResetPedMovementClipset(ped, 2)
         AnimpostfxStop('SwitchHUDIn')
         AnimpostfxStop('SwitchHUDOut')
         AnimpostfxStop('MP_Celeb_Lose')
-        ClearPedTasks(PlayerPedId())
+        ClearPedTasks(ped)
     end
 end)
