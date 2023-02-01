@@ -2,8 +2,7 @@ ESX = nil
 QBcore = nil
 
 if Config.UseESX then
-    TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-    TriggerEvent('qs-core:getSharedObject', function(obj) QS = obj end)
+    ESX = exports["es_extended"]:getSharedObject()
 elseif Config.UseQBCore then
     QBCore = exports['qb-core']:GetCoreObject()
 end
