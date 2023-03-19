@@ -47,5 +47,5 @@ Config.Lang = {
 	['cured'] = 'You took the medicine and feel much better!',
     ['feel_sick'] = 'You feel sick...',
     ['not_sick'] = 'You took mediciation but you are not sick!',
-	['not_sick'] = 'They are too far away to provide treatment!',
+	['too_far'] = 'They are too far away to provide treatment!',
 }
