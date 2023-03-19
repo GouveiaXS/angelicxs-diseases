@@ -96,7 +96,11 @@ if Config.RegisterCommand then
     RegisterCommand(Config.CommandName, function(source, arg) 
         if CommandUse() then
             if arg[1] then
-                TriggerServerEvent('angelicxs-MedicalDiseases:CommandHeal', tonumber(arg[1]))
+                if #(GetEntityCoords(PlayerPedId())-GetEntityCoords(GetPlayerPed(GetPlayerFromServerId(tonumber(arg[1]))))) <= Config.CommandDistance then
+                    TriggerServerEvent('angelicxs-MedicalDiseases:CommandHeal', tonumber(arg[1]))
+                 else
+                    TriggerEvent('angelicxs-MedicalDiseases:Notify', Config.Lang['too_far'], Config.LangType['error'])
+                end
             else
                 TriggerEvent('angelicxs-MedicalDiseases:Notify', Config.Lang['no_id'], Config.LangType['info'])
             end
