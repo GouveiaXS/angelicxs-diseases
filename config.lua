@@ -1,3 +1,4 @@
+
 ----------------------------------------------------------------------
 -- Thanks for supporting AngelicXS Scripts!							--
 -- Support can be found at: https://discord.gg/tQYmqm4xNb			--
@@ -21,6 +22,7 @@ end)
 
 Config.RegisterCommand = true               -- Allows a /command to cure all diseases instead of items
 Config.CommandName = 'CureDisease'          -- If Config.RegisterCommand, name of /command
+Config.CommandDistance = 5		            -- If Config.RegisterCommand, max distance player can be away to use command.
 Config.CommandJob = {                       -- If Config.RegisterCommand what jobs can use the /command to cure all diseases
     'ambulance', 
     'doctor'
@@ -45,4 +47,5 @@ Config.Lang = {
 	['cured'] = 'You took the medicine and feel much better!',
     ['feel_sick'] = 'You feel sick...',
     ['not_sick'] = 'You took mediciation but you are not sick!',
+	['not_sick'] = 'They are too far away to provide treatment!',
 }
