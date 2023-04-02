@@ -31,7 +31,7 @@ Config.CommandJob = {                       -- If Config.RegisterCommand what jo
 Config.IllnessCheck = 10                    -- In minutes, how long to do a illness check
 
 Config.CoughDrug = 'coughmedicine'          -- Name of item used to cure coughing
-Config.VomitDrug = 'nasuamedicine'          -- Name of item used to cure vomiting
+Config.VomitDrug = 'nauesamedicine'          -- Name of item used to cure vomiting
 Config.DizzyDrug = 'gingermedicine'         -- Name of item used to cure dizziness
 
 Config.LangType = {
@@ -45,7 +45,7 @@ Config.Lang = {
 	['no_id'] = 'Enter the ID of the player you are trying to cure!',
 	['wrong_medicine'] = 'You took the wrong kind of medicine for your illness!',
 	['cured'] = 'You took the medicine and feel much better!',
-    ['feel_sick'] = 'You feel sick...',
-    ['not_sick'] = 'You took mediciation but you are not sick!',
+	['feel_sick'] = 'You feel sick...',
+	['not_sick'] = 'You took mediciation but you are not sick!',
 	['too_far'] = 'They are too far away to provide treatment!',
 }
