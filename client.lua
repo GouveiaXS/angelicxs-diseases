@@ -74,8 +74,8 @@ function SickThread()
     while true do
         local sleep = Config.IllnessCheck * 60000
         local diseaseSelector = math.random(1,3)
-        local getSick = math.random(1,2)
-        if getSick == 1 and not isSick then
+        local getSick = math.random(1,100)
+        if getSick <= Config.IllnessChange and not isSick then
             TriggerEvent('angelicxs-MedicalDiseases:Notify', Config.Lang['feel_sick'], Config.LangType['info'])
             isSick = true
             if diseaseSelector == 1 then
