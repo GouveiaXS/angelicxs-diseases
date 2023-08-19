@@ -29,7 +29,7 @@ Config.CommandJob = {                       -- If Config.RegisterCommand what jo
 }
 
 Config.IllnessCheck = 10                    -- In minutes, how long to do a illness check
-Config.IllnessChange = 50		    -- % Chance to get sick
+Config.IllnessChance = 50		    -- % Chance to get sick
 
 Config.CoughDrug = 'coughmedicine'          -- Name of item used to cure coughing
 Config.VomitDrug = 'nauesamedicine'          -- Name of item used to cure vomiting
